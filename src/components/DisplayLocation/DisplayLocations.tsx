@@ -1,4 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
+import { GetLocationResponse } from "./fragment";
 
 export const DisplayLocations = () => {
   const { loading, error, data } = useQuery(GET_LOCATIONS);
@@ -7,17 +8,7 @@ export const DisplayLocations = () => {
   if (error) return <p>Error...</p>;
 
   return data.locations.map(
-    ({
-      id,
-      name,
-      description,
-      photo,
-    }: {
-      id: string;
-      name: string;
-      description: string;
-      photo: string;
-    }) => (
+    ({ id, name, description, photo }: GetLocationResponse) => (
       <div key={id}>
         <h3>{name}</h3>
         <img
@@ -38,10 +29,7 @@ export const DisplayLocations = () => {
 const GET_LOCATIONS = gql`
   query GetLocations {
     locations {
-      id
-      name
-      description
-      photo
+    ...
     }
   }
 `;

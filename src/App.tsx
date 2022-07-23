@@ -1,5 +1,5 @@
 import "./App.css";
-import { DisplayLocations } from "./components/DisplayLocations";
+import { DisplayLocations } from "./components/DisplayLocation/DisplayLocations";
 
 function App() {
   return (
