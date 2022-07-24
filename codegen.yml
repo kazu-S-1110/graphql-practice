@@ -1,5 +1,5 @@
 # codegen.yml
-schema: schema.graphql
+schema: ./schema.graphql
 documents: graphql/**/*.graphql
 generates:
   lib/generated/client.ts:

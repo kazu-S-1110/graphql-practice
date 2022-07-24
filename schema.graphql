@@ -1,0 +1,9 @@
+type Location {
+  id: String
+  name: String
+  description: String
+  photo: String
+}
+type Query {
+  Location(id: ID): Location!
+}
