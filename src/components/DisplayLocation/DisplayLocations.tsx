@@ -29,7 +29,10 @@ export const DisplayLocations = () => {
 const GET_LOCATIONS = gql`
   query GetLocations {
     locations {
-    ...
+      id
+      name
+      description
+      photo
     }
   }
 `;
